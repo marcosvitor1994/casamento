@@ -1,10 +1,10 @@
-import React from 'react'
-import { Button, Card, Col, Container, FloatingLabel, Form, FormControl, InputGroup, Row } from 'react-bootstrap'
-import { useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Alert, Button, Card, Col, Container, FloatingLabel, Form, FormControl, InputGroup, Row } from 'react-bootstrap'
 import ApiBase from '../services/ApiBase';
 import { mask, unMask } from 'remask';
 import { useForm } from 'react-hook-form';
 import imgContato from './img/img_contato.1.webp'
+import Data from "../components/Data";
 
 
 const Contato = () => {
@@ -14,9 +14,17 @@ const Contato = () => {
     borderRadius: '15px'
   }
 
-  const { register, setValue, handleSubmit } = useForm()
+  const [responseData, setResponseData] = useState([]);
+  useEffect(() => {
+    ApiBase.get("/contato").then((result) => {
+      setResponseData(result.data.contatos)        
+      }).catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-  const navigate = useNavigate();
+
+  const { register, setValue, handleSubmit } = useForm()
 
   function handleSubmit2(event) {
       novoEvento(event)
@@ -25,7 +33,7 @@ const Contato = () => {
   function novoEvento (props){
       const contato = props
       ApiBase.post(`/contato`, {contato})
-      .then((response) => alert('Contato enviado! Aguarde e entraremos em contato.', navigate('/home')))
+      .then((response) => alert('Mensagem enviada! Agradecemos pelo carinho.', window.location.reload(false)))
       .catch((error)=>{
           console.error('Error: ', error)
       })  
@@ -47,50 +55,30 @@ const Contato = () => {
   return (
     <>
       <Container>
-        <Row style={center} className='responsive'>
-            <Col md={12}>
-            
-            <br />
-              
-              <h1 style={{fontFamily: "Great vibes"}}>Deixe uma Mensagem</h1>
-              <p style={{fontFamily: "Cinzel"}}>
-                Entre em contato para qualquer dúvida
-              </p>
-              
+        <Row style={center}>
+            <Col md={12}>            
+            <br />              
+              <h1 style={{fontFamily: "Great vibes"}}>Deixe uma Mensagem</h1>              
+            <br /> 
            </Col>
           
-          <Col md={6} className='resonsive' > 
-          <br />
+          <Col md={6}> 
           
           <div
           style={{ 
                 width:'100%',
-                height:'620px',
+                height:'520px',
                 borderRadius: '5px',
                 backgroundImage: `url('${imgContato}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',                                
           }} 
-          />
-          <span>&nbsp;</span>
+          />          
 
           </Col>
-          <Col md={6} className='responsive lead' align='left'>
-          <br />
-            <Row>
-              <Col md={12} className='responsive'>
-                Contato dos noivos:
-              </Col>
-              <Col md={12} className='responsive'>
-                E-mail: casamentoanajuliaemarcos@gmail.com
-              </Col>
-              <Col md={12}>
-                Telefone: (61) 98557-6437
-              </Col>
-            </Row>
-                    <br />    
-            <Card border="danger" >
+          <Col md={6} className='lead' align='left' >
+            <Card border="danger" style={{height: '100%'}}>
                 <Card.Header>
                   <Container>
                     <Row>
@@ -107,9 +95,9 @@ const Contato = () => {
                         <Container>
                         <Row>                                    
                             <Col md={12}>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Email:</Form.Label>
-                                <Form.Control type="email" {...register("email")} placeholder="exemplo@email.com" required/>                       
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Nome:</Form.Label>
+                                <Form.Control type="text" {...register("nome")} placeholder="Nome completo" required/>                       
                             </Form.Group>
                             </Col>
                             <Col md={12}>
@@ -126,14 +114,14 @@ const Contato = () => {
                                     </InputGroup>
                             </Col>
                             <Col md={12}>
-                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <FloatingLabel label="Mensagem">
                                                     
                                     <Form.Control 
                                         as="textarea" 
                                         placeholder="Texto" 
                                         {...register("message")} 
-                                        style={{ height: '100px' }}
+                                        style={{ height: '150px' }}
                                         required
                                     />
                                                 
@@ -142,6 +130,7 @@ const Contato = () => {
                                 </Form.Group>
                                 </Col >
                                 <Col align="right">
+                                    <br />
                                      <Button variant="outline-danger"   type="submit" className="w-50">
                                          Enviar mensagem
                                      </Button>
@@ -155,11 +144,56 @@ const Contato = () => {
                             </Card.Text>
                 </Card.Body>
             </Card>
-            <br />
                         
          </Col>
+         <Col md={12}>
+         <span>&nbsp;</span>           
+
+           <h3 style={{fontFamily: "Great Vibes"}}>Mensagens</h3>
+           
+
+         </Col>
+         <Col md={12}>
+            {responseData.map((files) => (
+              <>
+                <Alert key={files.id} variant='danger' style={{fontFamily: "Cinzel"}}>
+                  <Row>
+                    <Col>
+                      <h4 align='left' style={{fontFamily: "Great Vibes"}}>{files.nome}:</h4>
+                    </Col>
+                    <Col>
+                      <Data>{files.createdAt}</Data>
+                    </Col>
+                  </Row>                  
+                  
+                  {files.message}
+                  <hr />
+                </Alert>
+                
+              </>
+            ))}
+         </Col>
          
-         
+        <Col md={12}>
+          <h3 style={{fontFamily: "Great Vibes"}}>Contato dos noivos:</h3> 
+          <p style={{fontFamily: "Cinzel"}}>
+                Entre em contato para qualquer dúvida
+          </p>               
+        </Col>
+        <Col md={12} className='lead'>
+                E-mail:
+                <br />
+                casamentoanajuliaemarcos@gmail.com
+        </Col>
+        <Col md={12} className='lead'>
+                Telefones:
+                  <br />
+                (61) 98557-6437 Ana Júlia 
+                  <br />
+                (61) 98383-0910 Marcos Vitor
+        </Col>
+        <span>&nbsp;</span>           
+
 
         </Row>
       </Container>

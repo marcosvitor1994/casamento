@@ -16,7 +16,7 @@ const Home = () => {
 
   useEffect(() => {
     ApiBase.get("/item").then((result) => {
-        console.log('ok')        
+        console.log('Marcos Vitor Desenvolvedor')        
       }).catch((error) => {
         console.error(error);
       });
