@@ -59,11 +59,11 @@ const Menu = () => {
                     <Nav className="justify-content-end flex-grow-1 pe-3 lead">
 
                     
-                    <Link className="nav-link" to="/home" onClick={() => setShow(false)}>Home</Link>
-                    <Link className="nav-link" to="/info" onClick={() => setShow(false)}>Informações</Link>
-                    <Link className="nav-link" to="/confirmacao" onClick={() => setShow(false)}>Confirme Presença</Link>
-                    <Link className="nav-link" to="/lista" onClick={() => setShow(false)}>Lista de Presentes</Link>
-                    <Link className="nav-link" to="/contato" onClick={() => setShow(false)}>Contato</Link>
+                    <Link className="nav-link" to="/home" onClick={() => setShow(false, window.scrollTo(0, 0))}>Home</Link>
+                    <Link className="nav-link" to="/info" onClick={() => setShow(false, window.scrollTo(0, 0))}>Informações</Link>
+                    <Link className="nav-link" to="/confirmacao" onClick={() => setShow(false, window.scrollTo(0, 0))}>Confirme Presença</Link>
+                    <Link className="nav-link" to="/lista" onClick={() => setShow(false, window.scrollTo(0, 0))}>Lista de Presentes</Link>
+                    <Link className="nav-link" to="/contato" onClick={() => setShow(false, window.scrollTo(0, 0))}>Contato</Link>
 
                                                 
                     </Nav>
@@ -77,11 +77,11 @@ const Menu = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
 
-                        <Link className="nav-link lead" to="/home" onClick={() => setShow(false)}>Home</Link>
-                        <Link className="nav-link lead" to="/info" onClick={() => setShow(false)}>Informações</Link>
-                        <Link className="nav-link lead" to="/confirmacao" onClick={() => setShow(false)}>Confirme Presença</Link>
-                        <Link className="nav-link lead" to="/lista" onClick={() => setShow(false)}>Lista de Presentes</Link>
-                        <Link className="nav-link lead" to="/contato" onClick={() => setShow(false)}>Contato</Link>
+                        <Link className="nav-link lead" to="/home" onClick={() => setShow(false, window.scrollTo(0, 0))}>Home</Link>
+                        <Link className="nav-link lead" to="/info" onClick={() => setShow(false, window.scrollTo(0, 0))}>Informações</Link>
+                        <Link className="nav-link lead" to="/confirmacao" onClick={() => setShow(false, window.scrollTo(0, 0))}>Confirme Presença</Link>
+                        <Link className="nav-link lead" to="/lista" onClick={() => setShow(false, window.scrollTo(0, 0))}>Lista de Presentes</Link>
+                        <Link className="nav-link lead" to="/contato" onClick={() => setShow(false, window.scrollTo(0, 0))}>Contato</Link>
 
                     </Offcanvas.Body>
                 </Offcanvas>

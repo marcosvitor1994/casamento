@@ -61,13 +61,18 @@ const Contato = () => {
           
           <Col md={6} className='resonsive' > 
           <br />
-          <img
-              src={imgContato}
-              style={{borderRadius: '5px'}}
-              className="img-fluid"
-              width='100%'
-              alt="Contato"
-            /> 
+          
+          <div
+          style={{ 
+                width:'100%',
+                height:'620px',
+                borderRadius: '5px',
+                backgroundImage: `url('${imgContato}')`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',                                
+          }} 
+          />
           <span>&nbsp;</span>
 
           </Col>
@@ -85,7 +90,7 @@ const Contato = () => {
               </Col>
             </Row>
                     <br />    
-            <Card border="danger">
+            <Card border="danger" >
                 <Card.Header>
                   <Container>
                     <Row>

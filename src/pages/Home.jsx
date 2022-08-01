@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router";
 import ApiBase from "../services/ApiBase";
-import { Col, Container, Row } from "react-bootstrap";
-import save from './img/Save the date.png';
+import { Button, Col, Container, Row } from "react-bootstrap";
 import CarouselCasamento from '../components/carousel';
+import save from './img/Save the date.png';
 import foto from './img/image1.1.webp';
 
 
@@ -21,6 +22,13 @@ const Home = () => {
       });
   }, []);
 
+  const navigate = useNavigate();
+  const presenca = () => {
+    navigate('/confirmacao', window.scrollTo(0, 0))
+  }
+  const presentes = () => {
+    navigate('/lista', window.scrollTo(0, 0))
+  }
 
   return (
     <>
@@ -63,19 +71,49 @@ const Home = () => {
 
           </Col>
           
-          <Col className='responsive' md={6}>
+          <Col md={6}>
             <h3 style={{fontFamily: "Great Vibes"}}>Guarde a Data</h3>
             <img
               src={save}
               className="img-fluid"
-              style={{borderRadius: '5px'}}
-              width='646'
-              height="auto"
+              style={{
+                borderRadius: '5px',
+                width:'auto',
+                height:"420px"
+              }}
+              
               alt="Save"
             /> 
           <span>&nbsp;</span>
                         
           </Col>
+          <Col md={12}> 
+              <br />              
+                         
+              <h3 style={{fontFamily: "Great Vibes"}}>Confirme Presença</h3>
+              <p className='lead' align="center">
+                Faça parte da nossa história de amor, confirme sua presença
+              </p>
+              <Button variant="outline-danger" onClick={presenca}>
+                  Confirmar Presença
+              </Button>
+
+
+          </Col>
+          <span>&nbsp;</span>
+
+          <Col md={12}>     
+              <br />              
+                     
+              <h3 style={{fontFamily: "Great Vibes"}}>Lista de presentes</h3>
+              <p className='lead' align="center">
+                Caso queira nos presentear fizemos uma lista de sugestões
+              </p>
+              <Button variant="outline-danger" onClick={presentes}>
+                  Nossa lista de presentes
+              </Button>
+          </Col>
+          <span>&nbsp;</span>
         
          
         </Row>

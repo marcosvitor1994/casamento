@@ -21,14 +21,13 @@ function CarouselCasamento() {
                 width:'100%',
                 height:'420px',
                 borderRadius: '5px',
-                backgroundImage: `url('${img6}')`,
+                backgroundImage: `url('${img8}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',                                
           }} 
-        />
+        />        
       </Carousel.Item>
-
       <Carousel.Item>        
         <div
           style={{ 
@@ -36,6 +35,19 @@ function CarouselCasamento() {
                 height:'420px',
                 borderRadius: '5px',
                 backgroundImage: `url('${img2}')`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',                                
+          }} 
+        />
+      </Carousel.Item>
+      <Carousel.Item>        
+        <div
+          style={{ 
+                width:'100%',
+                height:'420px',
+                borderRadius: '5px',
+                backgroundImage: `url('${img6}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',                                
@@ -81,20 +93,7 @@ function CarouselCasamento() {
           }} 
         />        
       </Carousel.Item>
-      <Carousel.Item>        
-        <div
-          style={{ 
-                width:'100%',
-                height:'420px',
-                borderRadius: '5px',
-                backgroundImage: `url('${img8}')`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',                                
-          }} 
-        />        
-      </Carousel.Item>
-      
+            
     </Carousel>
   );
 }

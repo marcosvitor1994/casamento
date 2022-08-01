@@ -50,21 +50,15 @@ const Confirmacao = () => {
             <h1 style={{fontFamily: "Great vibes"}}>Confirmação de presença</h1>
             <p style={{fontFamily: "Cinzel"}}>
               olá, convidado, sua presença é muito importante para nós!
-            </p>
-            
+            </p>            
             
          </Col>
-         <Col md={1}/> 
-         <Col md={10} className='lead'>
-            
-          <br />
-            
+         <Col md={12} className='lead'>
+
           <Card border='light'>
                 <Card.Body >
                     <Card.Text align="left">
-
                         <Form onSubmit={handleSubmit(handleSubmit2)} >
-
                         <Container>
                         <Row>
                             <Col md={5}>
@@ -78,7 +72,6 @@ const Confirmacao = () => {
                                 />                       
                             </Form.Group>
                             </Col>
-
                             <Col md={4}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email:</Form.Label>
@@ -89,8 +82,7 @@ const Confirmacao = () => {
                                   required
                                 />                       
                             </Form.Group>
-                            </Col>
-                            
+                            </Col>                            
                             <Col md={3}>
                                 <Form.Label>Telefone:</Form.Label>
                                     <InputGroup className="mb-3">
@@ -106,7 +98,6 @@ const Confirmacao = () => {
                             </Col>
                             <Col md={8}>          
                               <Row>                 
-
                               <Col key={`inline-'radio'`} md={6}>
                                 <span>Você irá ao evento?</span>
                               </Col>
@@ -135,44 +126,25 @@ const Confirmacao = () => {
                                 <Col align="right">
                                   <br />
                                      <Button 
-                                        variant="outline-primary" 
+                                        variant="outline-danger" 
                                         type="submit"
                                         className='w-100'
                                       >
                                          Confirmar
                                      </Button>
                                 </Col>
-
                           </Row>
                         </Container>
-
                       </Form>
-
                     </Card.Text>
                 </Card.Body>
-            </Card>
-                
-                        
+            </Card>               
+            <br />         
          </Col>
-         <Col md={1}/> 
-         <Col md={1} /> 
-         <Col md={10} >
-         <img 
-            alt="Envelope" 
-            className="img-fluid" 
-            data-retina="https://assets3.casare.me/assets/wedding/classic/champagne_blue/envelope@2x-ff4d9545b12f94de620d7127bee0ac98.png" id="rsvp-image" src="https://assets3.casare.me/assets/wedding/classic/champagne_blue/envelope-4f3491776c9343376b0e2d5b4e7ed70d.png"
-            width="100%" 
-          />
-          <span>&nbsp;</span>
-        </Col>
-        
          
-        
         </Row>
-        
       </Container>
-      <br />
-    
+      <br />    
     </>
   )
 }
