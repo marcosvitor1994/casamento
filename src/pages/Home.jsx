@@ -3,7 +3,7 @@ import ApiBase from "../services/ApiBase";
 import { Col, Container, Row } from "react-bootstrap";
 import save from './img/Save the date.png';
 import CarouselCasamento from '../components/carousel';
-import foto from './img/image1.1.jpg'
+import foto from './img/image1.1.webp';
 
 
 const Home = () => {

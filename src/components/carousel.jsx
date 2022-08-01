@@ -1,11 +1,11 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import img2 from '../pages/img/image2.2.jpg'
-import img3 from '../pages/img/image3.3.jpg'
-import img4 from '../pages/img/image4.4.jpg'
-import img6 from '../pages/img/image6.6.jpg'
-import img7 from '../pages/img/image7.JPG'
-import img8 from '../pages/img/imgCapa.1.jpg'
+import img2 from '../pages/img/image2.2.webp'
+import img3 from '../pages/img/image3.3.webp'
+import img4 from '../pages/img/image4.4.webp'
+import img6 from '../pages/img/image6.6.webp'
+import img7 from '../pages/img/image7.webp'
+import img8 from '../pages/img/imgCapa.1.webp'
 
 function CarouselCasamento() {
   return (

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import ApiBase from '../services/ApiBase';
 import { mask, unMask } from 'remask';
 import { useForm } from 'react-hook-form';
-import imgContato from './img/img_contato.1.jpg'
+import imgContato from './img/img_contato.1.webp'
 
 
 const Contato = () => {
