@@ -29,6 +29,10 @@ const Home = () => {
   const presentes = () => {
     navigate('/lista', window.scrollTo(0, 0))
   }
+  const mensagem = () => {
+    navigate('/contato', window.scrollTo(0, 0))
+  }
+
 
   return (
     <>
@@ -92,7 +96,7 @@ const Home = () => {
                          
               <h3 style={{fontFamily: "Great Vibes"}}>Confirme Presença</h3>
               <p className='lead' align="center">
-                Faça parte da nossa história de amor, confirme sua presença
+                Faça parte da nossa história de amor, confirme sua presença.
               </p>
               <Button variant="outline-danger" onClick={presenca}>
                   Confirmar Presença
@@ -107,10 +111,23 @@ const Home = () => {
                      
               <h3 style={{fontFamily: "Great Vibes"}}>Lista de presentes</h3>
               <p className='lead' align="center">
-                Caso queira nos presentear fizemos uma lista de sugestões
+                Caso queira nos presentear fizemos uma lista de sugestões.
               </p>
               <Button variant="outline-danger" onClick={presentes}>
                   Nossa lista de presentes
+              </Button>
+          </Col>
+          <span>&nbsp;</span>
+
+          <Col md={12}>     
+              <br />              
+                     
+              <h3 style={{fontFamily: "Great Vibes"}}>Deixe uma Mensagem</h3>
+              <p className='lead' align="center">
+                Deixe uma mensagem carinhosa para os noivos.
+              </p>
+              <Button variant="outline-danger" onClick={mensagem}>
+                  Mensagens
               </Button>
           </Col>
           <span>&nbsp;</span>
