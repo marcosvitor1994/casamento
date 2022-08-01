@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import ApiBase from "../services/ApiBase";
 import { Col, Container, Row } from "react-bootstrap";
 import save from './img/Save the date.png';
 import CarouselCasamento from '../components/carousel';
-import foto from './img/image1.jpg'
+import foto from './img/image1.1.jpg'
 
 
 const Home = () => {
@@ -11,6 +12,15 @@ const Home = () => {
     background : 'rgba(255,255,255, 0.95)',
     borderRadius: '15px'
   }
+
+  useEffect(() => {
+    ApiBase.get("/item").then((result) => {
+        console.log('ok')        
+      }).catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
 
   return (
     <>
@@ -29,7 +39,7 @@ const Home = () => {
               style={{ 
                 width:'100%',
                 height:"420px",
-                borderRadius: '15px',
+                borderRadius: '5px',
                 backgroundImage: `url('${foto}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
@@ -47,14 +57,14 @@ const Home = () => {
           </Col>
           
           <Col md={6}> 
-            <h4 style={{fontFamily: "Great Vibes"}}>Nossas Fotos</h4>
+            <h3 style={{fontFamily: "Great Vibes"}}>Nossas Fotos</h3>
             <CarouselCasamento />
             <span>&nbsp;</span>
 
           </Col>
           
           <Col className='responsive' md={6}>
-            <h4 style={{fontFamily: "Great Vibes"}}>Guarde a Data</h4>
+            <h3 style={{fontFamily: "Great Vibes"}}>Guarde a Data</h3>
             <img
               src={save}
               className="img-fluid"
@@ -68,8 +78,6 @@ const Home = () => {
           </Col>
         
          
-          <span>&nbsp;</span>
-
         </Row>
       </Container>
       <br />
