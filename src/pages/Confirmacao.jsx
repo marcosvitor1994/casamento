@@ -78,7 +78,7 @@ const Confirmacao = () => {
                                 <Form.Control 
                                   type="email" 
                                   {...register("email")} 
-                                  placeholder="examplo@email.com" 
+                                  placeholder="exemplo@email.com" 
                                   required
                                 />                       
                             </Form.Group>
@@ -139,8 +139,25 @@ const Confirmacao = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>               
+            
             <br />         
          </Col>
+          <Col md={12} align='left'>
+            
+            <h3 style={{fontFamily: "Great vibes"}}>Observações:</h3>
+
+            <ul>
+            <li><p >
+              Os convites físicos serão enviados somente após confirmação de presença no site ou WhatsApp. 
+            </p></li>
+            <li><p >
+              Os convites são restritos para os nomes citados durante o envio do Save The Date.
+            </p></li> 
+            <li><p >
+              O convite não pode ser transferido a terceiros que não foram citados durante o envio do Save The Date.
+            </p></li> 
+            </ul> 
+          </Col>
          
         </Row>
       </Container>
