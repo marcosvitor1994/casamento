@@ -99,9 +99,23 @@ const Lista = () => {
             <p style={{fontFamily: "Cinzel"}}>
               mas caso queira nos presentear segue uma lista com alguns itens
             </p>
+            
           <br />
 
          </Col>
+         <Col md={12} align='left'>
+            
+            <h3 style={{fontFamily: "Great vibes"}}>Observações:</h3>
+
+            <ul>
+            <li><p >
+              Fotos meramente ilustrativas. Fique à vontade para escolher a marca, o valor e onde comprar.
+            </p></li>
+            <li><p >
+              Reserve um presente para não haver repetições.
+            </p></li> 
+            </ul> 
+          </Col>
          <Col md={3} style={{marginBottom: '15px'}}>
 
             <Card bg='light' border="danger" style={{height: '100%'}}>
