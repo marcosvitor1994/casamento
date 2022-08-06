@@ -14,7 +14,7 @@ const Confirmacao = () => {
   const { register, setValue, handleSubmit } = useForm();
 
   function handleSubmit2(event) {
-      novoEvento(event)
+    novoEvento(event)
   };
 
   function novoEvento (props){
@@ -34,7 +34,6 @@ const Confirmacao = () => {
 
       let valor = unMask(event.target.value)
       valor = mask(valor, mascara)
-      console.log(valor)
 
       setValue(name, valor)
   }
@@ -105,7 +104,7 @@ const Confirmacao = () => {
                                 <Form.Check
                                     inline
                                     label="Sim"
-                                    onChange={setValue('resposta', 'sim')}                                
+                                    onClick={() => setValue('resposta', 'sim')}                                
                                     name="group1"
                                     type='radio'
                                     id={`inline-'radio'-1`}
@@ -115,7 +114,7 @@ const Confirmacao = () => {
                                 <Form.Check
                                   inline
                                   label="Não"
-                                  onChange={setValue('resposta', 'não')}
+                                  onClick={() => setValue('resposta', 'não')}
                                   name="group1"
                                   type='radio'
                                   id={`inline-'radio'-2`}
