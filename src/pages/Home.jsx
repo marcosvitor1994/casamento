@@ -23,17 +23,7 @@ const Home = () => {
   }, []);
 
   const navigate = useNavigate();
-  const presenca = () => {
-    navigate('/confirmacao', window.scrollTo(0, 0))
-  }
-  const presentes = () => {
-    navigate('/lista', window.scrollTo(0, 0))
-  }
-  const mensagem = () => {
-    navigate('/contato', window.scrollTo(0, 0))
-  }
-
-
+  
   return (
     <>
       
@@ -98,7 +88,7 @@ const Home = () => {
               <p className='lead' align="center">
                 Faça parte da nossa história de amor, confirme sua presença.
               </p>
-              <Button variant="outline-danger" onClick={presenca}>
+              <Button variant="outline-danger" onClick={() => navigate('/confirmacao', window.scrollTo(0, 0))}>
                   Confirmar Presença
               </Button>
 
@@ -113,7 +103,7 @@ const Home = () => {
               <p className='lead' align="center">
                 Caso queira nos presentear fizemos uma lista de sugestões.
               </p>
-              <Button variant="outline-danger" onClick={presentes}>
+              <Button variant="outline-danger" onClick={() => navigate('/lista', window.scrollTo(0, 0))}>
                   Nossa lista de presentes
               </Button>
           </Col>
@@ -126,7 +116,7 @@ const Home = () => {
               <p className='lead' align="center">
                 Deixe uma mensagem carinhosa para os noivos.
               </p>
-              <Button variant="outline-danger" onClick={mensagem}>
+              <Button variant="outline-danger" onClick={() => navigate('/contato', window.scrollTo(0, 0))}>
                   Mensagens
               </Button>
           </Col>
