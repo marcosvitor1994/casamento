@@ -13,6 +13,7 @@ import ListaConvidados from "../pages/gerente/listaConvidados";
 import Login from "../pages/Login";
 import EscolhaPresentes from "../pages/gerente/escolhaPresentes";
 import Gerente from "../pages/gerente/Gerente";
+import PrivateRoute from "../components/privateRoute";
 
 const Routers = () => {
   return (
@@ -27,10 +28,16 @@ const Routers = () => {
             <Route path="/contato" element={<Contato />} />
             <Route path="/info" element={<Info />} />
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/gerente" element={<Gerente />} />
-            <Route path="/confirmacao/lista" element={<ListaConvidados />} />
-
+            <Route path="/login" element={<Login />} />            
+            
+            <Route path="/gerente" element={<PrivateRoute />}>
+              <Route path="/gerente" element={<Gerente />} />
+            </Route>
+            <Route path="/confirmacao/lista" element={<PrivateRoute />}>
+              <Route path="/confirmacao/lista" element={<ListaConvidados />} />
+            </Route>
+            
+            
         </Routes>
     </>
   );

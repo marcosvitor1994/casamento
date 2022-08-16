@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import { Button, Form, Row, Col, Container, InputGroup, Card, FloatingLabel } from "react-bootstrap";
 import LoginValidator from "../validators/loginValidador";
-import logo from './img/logo-horizontal.png'
+import logo from './img/logo-horizontal.png';
+import ApiBase from "../services/ApiBase";
+import { useNavigate } from "react-router";
+
 
 const Login = () => {
  
@@ -49,10 +52,16 @@ const Login = () => {
   };
 
   // envio de dados 
+  const navigate = useNavigate();
 
   function novoEvento(props) {
-    const dados = props;
-    console.log(dados);    
+    const data = props;
+    ApiBase.post('/login', {data})
+    .then((response) => {
+      sessionStorage.setItem("_role", response.data.user._role);
+      window.location.reload(navigate('/gerente', window.scrollTo(0, 0)));      
+    })
+    .catch((err) => console.log(err))
   }
 
 

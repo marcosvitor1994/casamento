@@ -5,6 +5,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import CarouselCasamento from '../components/carousel';
 import save from './img/Save the date.png';
 import foto from './img/image1.1.webp';
+import Clock from "../components/Clock";
 
 
 const Home = () => {
@@ -81,6 +82,7 @@ const Home = () => {
           <span>&nbsp;</span>
                         
           </Col>
+
           <Col md={12}> 
               <br />              
                          
@@ -119,8 +121,19 @@ const Home = () => {
               <Button variant="outline-danger" onClick={() => navigate('/contato', window.scrollTo(0, 0))}>
                   Mensagens
               </Button>
+
           </Col>
           <span>&nbsp;</span>
+
+          <Col md={12}>
+              <br /> 
+              <h3 style={{fontFamily: "Great Vibes"}}>Contagem Regressiva</h3>
+              <br />
+              <h5 style={{fontFamily: "Cinzel"}}>21 de Janeiro de 2023</h5>
+              <br />
+              <Clock />
+              <span>&nbsp;</span>
+          </Col>
         
          
         </Row>

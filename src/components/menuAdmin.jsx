@@ -3,14 +3,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Container, Nav, Offcanvas } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import logo from '../pages/img/logo-horizontal.png';
+import { useNavigate } from "react-router";
 
 
-const Menu = () => {
+const MenuAdmin = () => {
 
     const detalhes = ['md'];
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const navigate = useNavigate();
+    const logout = () => {
+
+        sessionStorage.removeItem('_role')       
+        window.location.reload(navigate('/home'))        
+        
+    }
 
   return (
     <>
@@ -64,7 +73,8 @@ const Menu = () => {
                     <Link className="nav-link" to="/confirmacao" onClick={() => setShow(false, window.scrollTo(0, 0))}>Confirme Presença</Link>
                     <Link className="nav-link" to="/lista" onClick={() => setShow(false, window.scrollTo(0, 0))}>Lista de Presentes</Link>
                     <Link className="nav-link" to="/contato" onClick={() => setShow(false, window.scrollTo(0, 0))}>Contato</Link>
-                    <Link className="nav-link" to="/login" onClick={() => setShow(false, window.scrollTo(0, 0))}>Login</Link>
+                    <Link className="nav-link" to="/gerente" onClick={() => setShow(false, window.scrollTo(0, 0))}>Gerencia</Link>
+                    <button className='btn btn-light' onClick={() => logout(setShow(false, window.scrollTo(0, 0)))}>sair</button>
                                                 
                     </Nav>
                     
@@ -82,7 +92,11 @@ const Menu = () => {
                         <Link className="nav-link lead" to="/confirmacao" onClick={() => setShow(false, window.scrollTo(0, 0))}>Confirme Presença</Link>
                         <Link className="nav-link lead" to="/lista" onClick={() => setShow(false, window.scrollTo(0, 0))}>Lista de Presentes</Link>
                         <Link className="nav-link lead" to="/contato" onClick={() => setShow(false, window.scrollTo(0, 0))}>Contato</Link>
-                        <Link className="nav-link lead" to="/login" onClick={() => setShow(false, window.scrollTo(0, 0))}>Login</Link>
+                        <Link className="nav-link lead" to="/gerente" onClick={() => setShow(false, window.scrollTo(0, 0))}>Gerencia</Link>
+                        <div align="end"> 
+                            <button className='btn btn-light' align="right" onClick={() => logout(setShow(false, window.scrollTo(0, 0)))}>sair</button>                        
+                        </div>
+                        
 
                     </Offcanvas.Body>
                 </Offcanvas>
@@ -93,4 +107,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default MenuAdmin

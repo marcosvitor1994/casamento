@@ -9,8 +9,7 @@ const LoginValidator = {
     },
     senha: {
         required: mensagens.requiredSenha,
-        minLength: {value: 9, message: mensagens.minLength + ': 9'}, 
-        pattern: {value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{9,20}$/, message: mensagens.senhaIncorreta},
+        minLength: {value: 8, message: mensagens.minLength + ': 8'}, 
     }
 }
 
