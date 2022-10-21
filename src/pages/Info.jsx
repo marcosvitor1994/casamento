@@ -47,7 +47,7 @@ const Info = () => {
           <Cartao 
             titulo='Hora' 
             src='https://cdn0.casamentos.com.br/real-wedding-photo/119/original/960/jpg/150737.webp'
-            texto='18:00'
+            texto='16:30'
           />
          <span>&nbsp;</span>
 
