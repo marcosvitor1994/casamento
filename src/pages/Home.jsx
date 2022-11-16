@@ -46,7 +46,7 @@ const Home = () => {
                 backgroundImage: `url('${foto}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',                                
+                backgroundPosition: 'center',
               }} 
             />
           </Col>

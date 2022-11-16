@@ -72,7 +72,7 @@ const Contato = () => {
                 backgroundImage: `url('${imgContato}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',                                
+                backgroundPosition: 'bottom',                                
           }} 
           />          
 
